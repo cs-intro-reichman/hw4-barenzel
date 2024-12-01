@@ -1,30 +1,46 @@
 public class MyString {
     public static void main(String[] args) {
-        System.out.println("Testing lowercase:");
-        System.out.println("UnHappy : " + lowerCase("UnHappy"));
-        System.out.println("This costs 15 Sheksls : " + lowerCase("This costs 15 Sheksls"));
-        System.out.println("TLV : " + lowerCase("TLV"));
-        System.out.println("lowercase : " + lowerCase("lowercase"));
-
-        System.out.println("Testing contains:");
-        System.out.println(contains("unhappy", "happy")); // true
-        System.out.println(contains("happy", "unhappy")); // false
-        System.out.println(contains("historical", "story")); // false
-        System.out.println(contains("psychology", "psycho")); // true
-        System.out.println(contains("personality", "son")); // true
-        System.out.println(contains("personality", "dad")); // false
-        System.out.println(contains("resignation", "sign")); // true
+     
     }
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        // Replace the following statement with your code
-        return null;
+        String newString = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i)  >= 'A' && str.charAt(i) <= 'Z') {
+                newString += (char) (str.charAt(i) + 32);
+            } else {
+                newString += str.charAt(i);
+            }
+        }
+        return newString;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
-        return false;
+        if (str2 == "") {
+            return true;
+        }
+        if (str1.length() < str2.length()) {
+            return false;
+        }
+        boolean match = false;
+        int ch1 = 0;
+        int ch2 = 0;
+        while (ch1 < str1.length()) {
+            if (str1.charAt(ch1) != str2.charAt(ch2)) {
+                ch2 = 0;
+                match = false;
+                ch1++;
+            } else {
+                match = true;
+                ch1++;
+                ch2++;
+                if (ch2 == str2.length()){ 
+                    break;
+                }
+            }
+        }
+        return match;
     }
 }
