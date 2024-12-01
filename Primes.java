@@ -20,8 +20,8 @@ public class Primes {
     }
 
     public static boolean[] newArr(int num) {
-        boolean[] newArray = new boolean[num];
-        for (int i = 0; i < num; i++) {
+        boolean[] newArray = new boolean[num + 1];
+        for (int i = 0; i < (num + 1); i++) {
             newArray[i] = (i == 0 || i == 1) ? false : true;
         }
         return newArray;
