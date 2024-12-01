@@ -15,7 +15,7 @@ public class Primes {
                 countPrime++;
             }
         }
-        int precentge =  (countPrime * 100 / length);
+        int precentge =  (countPrime * 100 / (length - 1));
         System.out.println("There are " + countPrime + " primes between 2 and " + num + " (" + precentge + "% are primes)");
     }
 
